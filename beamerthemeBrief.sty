@@ -1,0 +1,129 @@
+\RequirePackage{graphicx}
+\RequirePackage{ctex}
+\RequirePackage{xcolor}
+\RequirePackage{float}
+%字体主题为宋体
+\usefonttheme[onlymath]{serif}
+\let\songti\relax
+\newCJKfontfamily\songti{SimSun}[AutoFakeBold]
+\setbeamerfont{normal text}{family={\rmfamily\songti},size=\normalsize,series=\bfseries}
+\setbeamerfont{alerted text}{family={\rmfamily\songti},size=\normalsize,series=\bfseries}
+\setbeamerfont{title}{family={\rmfamily\heiti},size=\huge}
+\setbeamerfont{subtitle}{size=\LARGE}
+\setbeamerfont{part title}{size=\LARGE}
+\setbeamerfont{section title}{size=\LARGE}
+\setbeamerfont{subsection title}{size=\LARGE}
+
+\setbeamerfont{author}{family={\rmfamily \kaishu},size=\Large}
+\setbeamerfont{institute}{family={\rmfamily\heiti},size=\normalsize}
+\setbeamerfont{date}{family={\rmfamily\kaishu},size=\normalsize}
+\setbeamerfont{part name}{family={\rmfamily\songti},size=\LARGE,series=\bfseries}
+\setbeamerfont{section name}{family={\rmfamily\songti},size=\LARGE,series=\bfseries}
+\setbeamerfont{subsection name}{family={\rmfamily\songti},size=\LARGE,series=\bfseries}
+
+\setbeamerfont{section in toc}{family={\rmfamily\songti},size=\large,series=\bfseries}
+\setbeamerfont{subsection in toc}{family={\rmfamily\songti},size=\normalsize,series=\bfseries}
+\setbeamerfont{subsubsection in toc}{family={\rmfamily\songti},size=\small,series=\bfseries}
+
+\setbeamerfont{section}{family={\rmfamily\songti},size=\Large,series=\bfseries}
+\setbeamerfont{subsection}{family={\rmfamily\songti},size=\large,series=\bfseries}
+
+\setbeamerfont{bibliography entry author}{family={\rmfamily\songti},size=\normalsize,series=\bfseries}
+\setbeamerfont{bibliography entry title}{family={\rmfamily\songti},size=\normalsize,series=\bfseries}
+\setbeamerfont{bibliography entry location}{family={\rmfamily\songti},size=\normalsize,series=\bfseries}
+\setbeamerfont{bibliography entry note}{family={\rmfamily\songti},size=\normalsize,series=\bfseries}
+
+\setbeamerfont{note page}{family={\rmfamily\songti},size=\small,series=\bfseries}
+
+\setbeamerfont{section in head/foot}{family={\rmfamily\kaishu},size=\footnotesize}
+
+\setbeamerfont{itemize/enumerate body}{family={\rmfamily\songti},size=\normalsize,series=\bfseries}
+
+\setbeamerfont{block title}{family={\rmfamily\songti},size=\Large,series=\bfseries}
+\setbeamerfont{block body}{family={\rmfamily\songti},size=\normalsize,series=\bfseries}
+\setbeamerfont{block body alerted}{family={\rmfamily\songti},size=\normalsize,series=\bfseries}
+\setbeamerfont{block body example}{family={\rmfamily\songti},size=\normalsize,series=\bfseries}
+\setbeamerfont{example text}{family={\rmfamily\songti},size=\normalsize,series=\bfseries}
+
+%颜色主题为红色
+\definecolor{normal red}{RGB}{134,59,99}
+\setbeamercolor{alerted text}{fg=red!50!normal red}
+\setbeamercolor{normal text}{fg=normal red!50!black}
+
+\setbeamercolor{title}{fg=normal red!50!black}
+
+\setbeamercolor{section in toc}{fg=normal red!50!black}
+\setbeamercolor{subsection in toc}{fg=normal red!50!black}
+
+\setbeamercolor{footline canvas}{fg=fg=normal red!50!black,bg=normal red!20!white}
+
+\setbeamercolor{block body}{bg=normal red!10!white,fg=normal red!50!black}
+\setbeamercolor{block title}{bg=normal red!20!white,fg=normal red!50!black}
+\setbeamercolor{block alerted text}{fg=normal red!50!red}
+
+%内外主题
+\setbeamertemplate{title page}{
+	\vbox{
+		\begin{beamercolorbox}[dp=0.7ex,ht=2ex,wd=1\paperwidth,center]{title}
+			\usebeamerfont{title}\inserttitle	
+		\end{beamercolorbox}
+		\ifx\insertsubtitle\@empty
+		\else	
+		\vspace{2ex}
+		\begin{beamercolorbox}[dp=0.7ex,ht=2ex,wd=1\paperwidth,center]{title}
+			\usebeamerfont{subtitle}\insertsubtitle
+		\end{beamercolorbox}
+		\fi
+		\begin{figure}
+			\centering
+			\includegraphics[width=10ex]{ZJURED.pdf}
+		\end{figure}
+		\ifx\insertauthor\@empty
+		\else	
+		\vspace{1ex}
+		\begin{beamercolorbox}[dp=0.7ex,ht=2ex,wd=1\paperwidth,center]{title}
+			\usebeamerfont{author}\insertauthor
+		\end{beamercolorbox}
+		\fi
+		\ifx\insertinstitute\@empty
+		\else	
+		\vspace{4ex}
+		\begin{beamercolorbox}[dp=0.7ex,ht=2ex,wd=1\paperwidth,center]{title}
+			\usebeamerfont{institute}\insertinstitute
+		\end{beamercolorbox}
+		\fi
+		\vspace{3ex}
+		\begin{beamercolorbox}[dp=0.7ex,ht=2ex,wd=1\paperwidth,center]{title}
+			\insertdate
+		\end{beamercolorbox}
+}}
+
+\setbeamertemplate{footline}{
+	\hbox{%
+		\usebeamerfont{section in head/foot}%
+		\begin{beamercolorbox}[ht=3ex,wd=1\paperwidth]{footline canvas}
+			\insertsectionnavigationhorizontal{0.8\linewidth}{}{}\hfill
+			\insertframenumber/\inserttotalframenumber\hspace{2ex}
+		\end{beamercolorbox}
+}}
+
+\setbeamertemplate{headline}{%
+\vspace{1ex}%
+	\hbox{	
+		\qquad\includegraphics[width=0.8cm]{ZJURED}%
+		\usebeamerfont{section}%
+		\begin{beamercolorbox}[dp=0.7ex,ht=3.5ex,wd=0.8\paperwidth]{headline}%
+			\hspace{1ex}\insertsection%
+			\ifx\insertsubsection\@empty
+			\else
+			{\usebeamerfont{subsection}\,\rule[0.7ex]{0.8cm}{0.04cm}\,\usebeamercolor{section}\insertsubsection}
+			\fi%     
+		\end{beamercolorbox}
+}}
+
+\setbeamertemplate{blocks}[rounded][shadow=true]
+
+\setbeamertemplate{itemize/enumerate body}{\usebeamerfont{itemize/enumerate body}}
+\setbeamertemplate{itemize items}{\color{normal red!40!black}$\bullet$}
+\setbeamertemplate{enumearte items}{\color{normal red!40!black}}
+
