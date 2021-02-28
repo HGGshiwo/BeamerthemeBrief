@@ -1,2 +1,2 @@
 # BeamerthemeBrief
- 简介主题
+ 简洁主题
